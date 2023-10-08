@@ -1,0 +1,2 @@
+(this["webpackJsonpHair-Nor-There"]=this["webpackJsonpHair-Nor-There"]||[]).push([[0],{9:function(e,r,t){"use strict";t.r(r);var n=t(0),c=t.n(n),o=t(3),i=t.n(o),s=t(1),d=function(){return Object(s.jsx)("div",{children:"Hello, World!"})};i.a.render(Object(s.jsx)(c.a.StrictMode,{children:Object(s.jsx)(d,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.19054301.chunk.js.map
