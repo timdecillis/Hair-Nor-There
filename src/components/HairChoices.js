@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux'
 
 
 const HairChoices = () => {
-  const choices = useSelector(getTypes)
-  console.log(choices)
+  const choices = useSelector(getTypes).types
+  if (!choices.length) return null
   return (
     <div>
       <h2>Your hair choices</h2>
-      {/* {choices.map((choice, i) => <div key={i}>{choice}</div>)} */}
+      {choices.map((choice, i) => <div key={i}>{choice}</div>)}
     </div>
   )
 }
