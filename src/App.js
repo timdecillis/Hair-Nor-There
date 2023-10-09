@@ -1,8 +1,10 @@
 import React from 'react'
 
+import HairType from './components/HairType'
+
  const App = () => {
   return (
-    <div>Hello, World!</div>
+    <HairType/>
   )
 }
 
