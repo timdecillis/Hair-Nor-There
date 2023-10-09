@@ -1,10 +1,14 @@
 import React from 'react'
 
 import HairType from './components/HairType'
+import HairChoices from './components/HairChoices'
 
- const App = () => {
+const App = () => {
   return (
-    <HairType/>
+    <div>
+      <HairType />
+      <HairChoices />
+    </div>
   )
 }
 
