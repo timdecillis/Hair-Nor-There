@@ -1,8 +1,11 @@
 import React from 'react'
 
- const HairType = () => {
+const HairType = () => {
   return (
-    <input></input>
+    <div>
+      <h2>Please enter your hair type</h2>
+      <input></input>
+    </div>
   )
 }
 
