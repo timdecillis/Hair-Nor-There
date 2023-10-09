@@ -11,4 +11,6 @@ const typesSlice = createSlice({
   }
 })
 
-export default typesSlice
+export default typesSlice.reducer
+
+export const getTypes = state => state.types
