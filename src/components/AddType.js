@@ -11,7 +11,6 @@ const AddType = () => {
 
   const onSubmitTypeClicked = () => {
     if (!type) return
-    console.log('types:', types)
     if (types.includes(type)) return console.log('type already exists')
       dispatch(typeAdded({type: type}))
   }
