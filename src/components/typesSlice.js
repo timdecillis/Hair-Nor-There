@@ -10,22 +10,19 @@ const typesSlice = createSlice({
   initialState,
   reducers: {
     typeAdded(state, action) {
-      console.log(action.payload)
-      // const { type } = action.payload
-
-      // if (!state.types.contains(type)) {
-      //   console.log('adding new type')
-      //   state.types.push(type)
-      //   return
-      // }
-      // console.log('type already exists')
-      // return
+      const { type } = action.payload
+        state.types.push(type)
+        return
+      },
+    typeChosen(state, action) {
+      const { type } = action.payload
+      state.userType = type
     }
   }
 })
 
 export default typesSlice.reducer
 
-export const { typeAdded } = typesSlice.actions
+export const { typeAdded, typeChosen } = typesSlice.actions
 
 export const getTypes = state => state.types
