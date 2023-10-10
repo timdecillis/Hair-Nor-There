@@ -1,13 +1,14 @@
 import React from 'react'
 
-import HairType from './components/HairType'
+import AddType from './components/AddType'
 import HairChoices from './components/HairChoices'
 
 const App = () => {
   return (
     <div>
-      <HairType />
       <HairChoices />
+      <h2>Or</h2>
+      <AddType />
     </div>
   )
 }

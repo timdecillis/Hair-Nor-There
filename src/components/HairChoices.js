@@ -9,8 +9,8 @@ const HairChoices = () => {
   if (!types.length) return null
   return (
     <div>
-      <h2>Your hair choices</h2>
-      {types.map((type, i) => <div key={i}>{type}</div>)}
+      <h2>Choose a hair type</h2>
+      {types.map((type, i) => <button key={i}>{type}</button>)}
     </div>
   )
 }
