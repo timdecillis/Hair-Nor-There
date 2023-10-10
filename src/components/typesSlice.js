@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 const initialState = {
   types: ['normal', 'dry', 'oily'],
@@ -10,17 +11,11 @@ const typesSlice = createSlice({
   initialState,
   reducers: {
     typeAdded(state, action) {
-      console.log(action.payload)
-      // const { type } = action.payload
-
-      // if (!state.types.contains(type)) {
-      //   console.log('adding new type')
-      //   state.types.push(type)
-      //   return
-      // }
-      // console.log('type already exists')
-      // return
-    }
+      const { type } = action.payload
+        console.log('adding new type')
+        state.types.push(type)
+        return
+      }
   }
 })
 

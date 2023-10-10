@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { typeAdded } from './typesSlice'
+import { typeAdded, getTypes } from './typesSlice'
 
 const AddType = () => {
 
   const dispatch = useDispatch()
+  const {types} = useSelector(getTypes)
   const [type, setType] = useState('')
 
   const onSubmitTypeClicked = () => {
-    if (type) {
-      console.log('type:', type)
+    if (!type) return
+    console.log('types:', types)
+    if (types.includes(type)) return console.log('type already exists')
       dispatch(typeAdded({type: type}))
-    }
   }
 
   return (
