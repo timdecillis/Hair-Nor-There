@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
 
 const initialState = {
   types: ['normal', 'dry', 'oily'],
@@ -12,15 +11,18 @@ const typesSlice = createSlice({
   reducers: {
     typeAdded(state, action) {
       const { type } = action.payload
-        console.log('adding new type')
         state.types.push(type)
         return
-      }
+      },
+    typeChosen(state, action) {
+      const { type } = action.payload
+      state.userType = type
+    }
   }
 })
 
 export default typesSlice.reducer
 
-export const { typeAdded } = typesSlice.actions
+export const { typeAdded, typeChosen } = typesSlice.actions
 
 export const getTypes = state => state.types
