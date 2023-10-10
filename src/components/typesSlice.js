@@ -9,6 +9,12 @@ const typesSlice = createSlice({
   name: 'types',
   initialState,
   reducers: {
+    typeAdded(state, action) {
+      const { type } = action.payload
+      if (!state.types.contains(type)) {
+        state.types.push(type)
+      }
+    }
   }
 })
 
