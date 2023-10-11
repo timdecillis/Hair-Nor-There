@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   inspirations: ['Lady Gaga', 'Dolly Parton', 'Madonna'],
-  userType: 'undecided'
+  userInspiration: 'undecided'
 }
 
 const inspirationSlice = createSlice({
