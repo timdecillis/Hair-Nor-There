@@ -8,8 +8,8 @@ const YourHair = () => {
   const type = useSelector(getTypes).userType
   return (
     <div>
-      <h2>Your hair type</h2>
-      {type}
+      <h2>Your hair type:</h2>
+      <h3>{type}</h3>
     </div>
   )
 }
