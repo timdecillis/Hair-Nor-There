@@ -1,7 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from 'react-redux'
-
-import { getInspirations } from '../Inspiration/inspirationSlice'
 
 const initialState = {
   suggestion: null
@@ -20,6 +17,6 @@ const suggestionSlice = createSlice({
 
 export default suggestionSlice.reducer
 
-export const { inspirationAdded, inspirationChosen } = suggestionSlice.actions
+export const { createSuggestion } = suggestionSlice.actions
 
 export const getSuggestion = state => state.suggestion
