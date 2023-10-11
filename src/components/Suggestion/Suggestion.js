@@ -6,7 +6,7 @@ import { getSuggestion } from './suggestionSlice'
 const Suggestion = () => {
   const { suggestion } = useSelector(getSuggestion)
   return (
-    <h1>{suggestion}</h1>
+    <h1>Your suggestion: {suggestion}</h1>
   )
 }
 

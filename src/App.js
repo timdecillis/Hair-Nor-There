@@ -17,9 +17,37 @@ const App = () => {
 
 
   const generate = () => {
-    if (type && inspiration) {
-      dispatch(createSuggestion({suggestion: 'short bob'}))
+    let suggestion;
+    if (!type || !inspiration) return
+    if (type === 'oily' && inspiration === 'Lady Gaga') {
+      suggestion = 'The Greasy Diva'
     }
+    if (type === 'normal' && inspiration === 'Lady Gaga') {
+      suggestion = 'The Basic Diva'
+    }
+    if (type === 'dry' && inspiration === 'Lady Gaga') {
+      suggestion = 'The Starchy Diva'
+    }
+    if (type === 'oily' && inspiration === 'Dolly Parton') {
+      suggestion = 'The Greasy Queen'
+    }
+    if (type === 'normal' && inspiration === 'Dolly Parton') {
+      suggestion = 'The Basic Queen'
+    }
+    if (type === 'dry' && inspiration === 'Dolly Parton') {
+      suggestion = 'The Starchy Queen'
+    }
+    if (type === 'oily' && inspiration === 'Madonna') {
+      suggestion = 'The Greasy Icon'
+    }
+    if (type === 'normal' && inspiration === 'Madonna') {
+      suggestion = 'The Basic Icon'
+    }
+    if (type === 'dry' && inspiration === 'Madonna') {
+      suggestion = 'The Starchy Icon'
+    }
+    dispatch(createSuggestion({ suggestion }))
+
   }
 
   return (
