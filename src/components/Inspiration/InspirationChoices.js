@@ -1,26 +1,26 @@
 import React from 'react'
 
-import { getTypes, typeChosen } from './typesSlice'
+import { getInspirations, inspirationChosen } from './inspirationSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
 
 const InspirationChoices = () => {
-  const {choices} = useSelector(getChoices)
+  const {inspirations} = useSelector(getInspirations)
   const dispatch = useDispatch()
 
-  const onTypeClicked = (type) => {
-    dispatch(typeChosen({ type }))
+  const onInspirationClicked = (inspiration) => {
+    dispatch(inspirationChosen({ inspiration }))
   }
 
-  if (!types.length) return null
+  if (!inspirations.length) return null
   return (
     <div>
-      <h2>Choose a hair type</h2>
-      {types.map((type, i) => <button key={i} onClick={
+      <h2>Choose a diva</h2>
+      {inspirations.map((inspiration, i) => <button key={i} onClick={
         () => {
-          onTypeClicked(type)
+          onInspirationClicked(inspiration)
         }
-        }>{type}</button>)}
+        }>{inspiration}</button>)}
     </div>
   )
 }
