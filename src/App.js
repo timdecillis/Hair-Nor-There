@@ -18,10 +18,8 @@ const App = () => {
 
   const generate = () => {
     if (type && inspiration) {
-      dispatch(createSuggestion({ suggestion: 'short bob' }))
-      return
+      dispatch(createSuggestion({}))
     }
-    console.log('failed')
   }
 
   return (
