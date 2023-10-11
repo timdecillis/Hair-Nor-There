@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   types: ['normal', 'dry', 'oily'],
-  userType: null
+  userType: 'undecided'
 }
 
 const typesSlice = createSlice({
