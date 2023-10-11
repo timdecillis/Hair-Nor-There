@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { inspirationAdded, getInspirations } from './typesSlice'
+import { inspirationAdded, getInspirations } from './inspirationSlice'
 
 const AddInspiration = () => {
 
@@ -12,7 +12,7 @@ const AddInspiration = () => {
   const onSubmitInspirationClicked = () => {
     if (!inspiration) return
     if (inspirations.includes(inspiration)) return console.log('type already exists')
-      dispatch(inspirationAdded({inspiration: inspiration}))
+      dispatch(inspirationAdded({inspiration}))
   }
 
   return (

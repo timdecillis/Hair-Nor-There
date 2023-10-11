@@ -11,12 +11,12 @@ const inspirationSlice = createSlice({
   reducers: {
     inspirationAdded(state, action) {
       const { inspiration } = action.payload
-        state.types.push(inspiration)
+        state.inspirations.push(inspiration)
         return
       },
     inspirationChosen(state, action) {
       const { inspiration } = action.payload
-      state.userType = inspiration
+      state.userInspiration = inspiration
     }
   }
 })
@@ -25,4 +25,5 @@ export default inspirationSlice.reducer
 
 export const { inspirationAdded, inspirationChosen } = inspirationSlice.actions
 
-export const getInspirations = state => state.inspirations
+export const getInspirations = state => {
+  return state.inspirations}
