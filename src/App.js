@@ -18,7 +18,7 @@ const App = () => {
 
   const generate = () => {
     if (type && inspiration) {
-      dispatch(createSuggestion({}))
+      dispatch(createSuggestion({suggestion: 'short bob'}))
     }
   }
 

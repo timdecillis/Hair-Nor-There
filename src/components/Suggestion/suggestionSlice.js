@@ -9,9 +9,7 @@ const suggestionSlice = createSlice({
   initialState,
   reducers: {
     createSuggestion(state, action) {
-      console.log('payload:', action.payload)
       const { suggestion } = action.payload
-      console.log('suggestion:', suggestion)
       state.suggestion = suggestion
     }
   }
