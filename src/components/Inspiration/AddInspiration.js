@@ -1,29 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { getTypes, typeChosen } from './typesSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { inspirationAdded, getInspirations } from './typesSlice'
 
+const AddInspiration = () => {
 
-const HairChoices = () => {
-  const {types} = useSelector(getTypes)
   const dispatch = useDispatch()
+  const {inspirations} = useSelector(getInspirations)
+  const [inspiration, setInspiration] = useState('')
 
-
-  const onTypeClicked = (type) => {
-    dispatch(typeChosen({ type }))
+  const onSubmitInspirationClicked = () => {
+    if (!inspiration) return
+    if (inspirations.includes(inspiration)) return console.log('type already exists')
+      dispatch(inspirationAdded({inspiration: inspiration}))
   }
 
-  if (!types.length) return null
   return (
     <div>
-      <h2>Choose a hair type</h2>
-      {types.map((type, i) => <button key={i} onClick={
-        () => {
-          onTypeClicked(type)
-        }
-        }>{type}</button>)}
+      <h2>Enter a new inspiration</h2>
+      <input onChange={e => setInspiration(e.target.value)}></input>
+      <button onClick={onSubmitInspirationClicked}>Submit</button>
     </div>
   )
 }
 
-export default HairChoices
+export default AddInspiration
