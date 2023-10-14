@@ -20,4 +20,3 @@ export default suggestionSlice.reducer
 export const { createSuggestion } = suggestionSlice.actions
 
 export const getSuggestion = state => state.suggestion
-
