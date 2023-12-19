@@ -2,14 +2,13 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Counter = ({value}) => {
+const Counter = ({value, onSubmit}) => {
 
   const [input, setInput] = useState('');
 
   const submit = (e) => {
     e.preventDefault();
-    let value = input;
-    console.log('value:',value)
+    onSubmit(input)
     setInput('');
   }
 
