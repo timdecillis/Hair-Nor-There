@@ -1,6 +1,11 @@
 import React from 'react'
 import { Dispatch } from 'redux'
+
+import store from './newStore'
+
 const App = () => {
+
+  let value = store.getState().value;
 
   const increment = () => {
 
@@ -8,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <div>Hi!</div>
+      <div>Value: {value}</div>
       <button>Increment count</button>
     </>
   )
