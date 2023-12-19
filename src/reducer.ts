@@ -1,4 +1,4 @@
-const initialState = {value: 0};
+const initialState = {value: 10};
 
 export const reducer = (state = initialState, action: any) => {
   if (action.type === 'INCREMENT') {

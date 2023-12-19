@@ -1,20 +1,32 @@
 import React from 'react'
-import { Dispatch } from 'redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react'
 
+import { set } from './components/actions'
 import store from './newStore'
 
 const App = () => {
 
-  let value = store.getState().value;
+  const [input, setInput] = useState('');
 
-  const increment = () => {
+  const dispatch = useDispatch();
+  let value = useSelector(state => state.value);
 
+  const submit = (e) => {
+    e.preventDefault();
+    let value = input;
+    console.log('value:',value)
+    dispatch(set(value));
+    setInput('');
   }
 
   return (
     <>
-      <div>Value: {value}</div>
-      <button>Increment count</button>
+      <div>Counter: {value}</div>
+      <form onSubmit={submit}>
+        <input onChange={(e) => setInput(e.target.value)} type='text' placeholder='enter amount' value={input}></input>
+        <input type='submit' value='Set counter'></input>
+      </form>
     </>
   )
 }
