@@ -1,16 +1,29 @@
 import React from 'react'
-import { Dispatch } from 'redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react'
+
+import { CounterContainer } from './components/CounterContainer'
+import { set } from './components/actions'
+import store from './newStore'
+import Counter from './components/Counter'
+
 const App = () => {
 
-  const increment = () => {
+  const [input, setInput] = useState('');
 
+  const dispatch = useDispatch();
+  let value = useSelector(state => state.value);
+
+  const submit = (e) => {
+    e.preventDefault();
+    let value = input;
+    console.log('value:',value)
+    dispatch(set(value));
+    setInput('');
   }
 
   return (
-    <>
-      <div>Hi!</div>
-      <button>Increment count</button>
-    </>
+    <CounterContainer/>
   )
 }
 
